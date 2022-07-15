@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //1.获取元素
+        var div=document.querySelector('div');
+
+        //手指触摸到一个DOM元素
+        div.addEventListener('touchstart',function(e){
+            console.log(e);
+        });
+
+        // 手指在一个DOM元素上滑动时触发(按住，并且移动)
+        div.addEventListener('touchmove',function(){
+            console.log('touchmove');
+        });
+
+        // 手指从一个DOM元素上移开
+        div.addEventListener('touchend',function(){
+            console.log('touchend');
+        });
+    </script>
+</body>
+</html>

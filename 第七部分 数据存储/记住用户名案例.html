@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username"> <input type="checkbox" name="" id="remenber"> 记住用户名
+    <script>
+        var username=document.querySelector("#username");
+        var remenber=document.querySelector("#remenber");
+
+        var getItem=localStorage.getItem('uname');
+            if(getItem){
+                username.value=getItem;
+                remenber.checked=true;
+            }
+
+
+        remenber.addEventListener('change',function(){
+            // 当我们点击了之后，就可以把表单里面的值存储起来
+            if(this.checked){
+                var val=username.value;
+                localStorage.setItem('uname',val);
+            }else{
+                localStorage.removeItem('uname');
+            }
+
+        })
+
+ 
+
+
+    </script>
+</body>
+</html>

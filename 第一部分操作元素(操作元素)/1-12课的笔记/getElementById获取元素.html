@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2019-9-9
+    </div>
+    <script>
+        // 1.因为我们的文档页面从上往下加载，所以先得有标签，所以我们的script写到标签下面
+        // 2.参数 id是一个大小写敏感的字符串
+        var timer=document.getElementById("time");
+        console.log(timer);
+
+        //可以通过console.dir打印我们返回的元素对象，更好的查看里面的元素和方法。
+       console.dir(timer);
+
+       //返回的是一个元素对象
+       console.log(typeof timer);
+       // console.log(timer.innerText);
+
+    </script>
+</body>
+</html>

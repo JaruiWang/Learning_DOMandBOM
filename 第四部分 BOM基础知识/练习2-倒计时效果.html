@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+            line-height: 50px;
+            text-align: center;
+            font-size: 27px;
+        }
+
+        div{
+            width: 200px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hour">01</span>
+        <span class="miunte">15</span>
+        <span class="second">28</span>
+    </div>
+
+    <script>
+        // 1.获取元素
+        var hour=document.querySelector('.hour');
+        var miunte=document.querySelector('.miunte');
+        var second=document.querySelector('.second');
+
+        var inputTime=new Date('2022-05-23 18:00:00'); //返回的用户输入时间的总毫秒数
+       // console.log(inputTime);
+       //先调用一次countDonw()，设置初始值
+       countDonw()
+
+       //2.开启定时器
+       setInterval(countDonw,1000);
+
+       function countDonw(){
+            var nowTime=new Date(); //返回的当前时间的总毫秒数
+            var times=(inputTime-nowTime )/1000; //计算剩余时间的秒数
+         //   console.log(times);
+           var h=parseInt(times /60/60%24); //获取 小时 数
+           //parseInt()函数是把浮点数转化为整数
+            h=h<10? '0'+h:h;
+            hour.innerHTML=h;
+
+           var m=parseInt(times /60%60); //获取 分钟数
+           m= m<10? '0'+m:m;
+           miunte.innerHTML=m;
+    
+           var s=parseInt(times %60); //获取 秒数
+           s=s<10? '0'+s:s;
+           second.innerHTML=s;
+
+       }
+ 
+    </script>
+</body>
+</html>

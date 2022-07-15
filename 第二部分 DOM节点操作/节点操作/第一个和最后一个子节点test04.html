@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
+        <li>我是li6</li>
+    </ol>
+    <script>
+        var ol=document.querySelector('ol');
+        console.log(ol.childNodes);
+       
+       //1.firstChild获取的第一个子节点，不管是第一个元素节点还是文本节点
+        console.log(ol.firstChild);
+        //1.lastChild获取的最后一个子节点，不管是最后一个元素节点还是文本节点
+        // console.log(ol.lastChild);
+
+        //2.firstElementChild获取的第一个元素子节点，但是有兼容性问题
+        console.log(ol.firstElementChild);
+        //2.lastElementChild获取的最后一个元素子节点，但是有兼容性问题
+        console.log(ol.lastElementChild);
+
+        //3.实际开发的写法，既没有兼容性问题又返回第一个元素
+        console.log(ol.children[0]);
+        //3.实际开发的写法，既没有兼容性问题又返回最后一个元素
+        console.log(ol.children[ol.children.length-1]);
+
+    </script>
+</body>
+</html>

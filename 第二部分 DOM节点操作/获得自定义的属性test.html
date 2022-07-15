@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a1" index="zxccvb" class="classhaha">
+    </div>
+
+    <script>
+        var div=document.getElementById('a1');
+    //    console.log(div.id);
+     //   console.log(div.index);  获取失败了
+    //    console.log(div.getAttribute('id'));
+     //   console.log(div.getAttribute('index'));
+     div.id='a2';
+   //  div.index='aaaaaa'; 自定义属性，直接设置无效
+   div.setAttribute('index','aaaabb');
+ //  div.setAttribute('class','class001');
+ div.className='class002';  //注意class属性比较特殊，用div.className是使用className名字
+                                //用div.setAttribute('class','class001'); 使用class名字
+   // 3.移除属性 removeAttribute(属性)
+   div.removeAttribute('index');
+   div.removeAttribute('class');
+   </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 600px;
+            margin-left: 300px;
+        }
+        th,td{
+            border: 1px solid #ccc;
+            height: 50px;
+        }
+        table{
+            width: 100%;
+            border-collapse:collapse;
+            text-align: center;
+        }
+
+        thead tr{
+            background-color: #008c8c;
+            color: #fff;
+        }
+        tbody tr:hover{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody id="j_tb">
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="">
+                    </th>
+                    <th>
+                        商品
+                    </th>
+                    <th>
+                        价钱
+                    </th>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        //1.获取对象
+        var j_cbAll=document.getElementById('j_cbAll');
+        var checkboxs=document.getElementById('j_tb').getElementsByTagName('input');
+
+        //2.注册事件
+        //事件由j_cbAll总复选框触发，几个小复选框的状态和j_cbAll总复选框状态保持一致
+        j_cbAll.onclick=function(){
+            console.log(this.checked);
+            for(var i=0;i<checkboxs.length;i++){
+                checkboxs[i].checked=this.checked;
+                }
+            }
+            //事件由几个小复选框的onclick触发
+        // 下面这个函数检查几个小复选框是否全选，若全选，则j_cbAll总复选框也要选中；
+        // 若没有全选，则j_cbAll总复选框不能处于选中状态
+        for(var i=0;i<checkboxs.length;i++){      
+            checkboxs[i].onclick=function(){
+            //    console.log("点击了");
+            // flag控制全选按钮是否选中
+                var flag=true;
+                //每次点击后都要检查下面几个小复选框是否全选
+                for(var j=0;j<checkboxs.length;j++){
+                        if (checkboxs[j].checked==false){
+                            flag=false;
+                            //一旦检测到有false，既可以break了，推出for循环，提高程序的运行效率
+                            break;
+                        }
+                  }
+                  j_cbAll.checked=flag;
+               }
+            }
+
+
+    </script>
+</body>
+</html>

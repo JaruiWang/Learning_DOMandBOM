@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            margin-left: 600px;
+            
+        }
+        li{
+            width: 52px;
+            height: 52px;
+            border: 1px solid;
+            list-style: none;
+            margin: 10px ;
+            float: left;
+            background-image: url("./images/前端精灵图.jpg");
+            /* background-position: 0px 0px; */
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        //1.获取元素，所有的小li
+        var lis=document.querySelectorAll('li');
+        for(var i=0;i<lis.length;i++){
+            var index=i*63;
+            lis[i].style.backgroundPosition='0 -'+index+"px";
+       
+// x y:表示使用长度值定位,是将背景图像的左上角,放置在对象的背景区域中（x, y）所指定的位置，
+// 即 x, y 定义的是背景图像的左上角，相对于背景区域左上角的偏移量。
+//偏移量长度可以是正值，也可以是负值。
+//x 为正值表示向右偏移，负值表示向左偏移；y 为正值表示向下偏移，负值表示向上偏移。
+
+
+        }
+        
+    </script>
+</body>
+</html>

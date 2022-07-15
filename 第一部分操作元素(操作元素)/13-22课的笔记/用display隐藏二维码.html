@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin-top: 300px;
+            margin-left: 300px;
+            position: relative;
+        }
+        img{
+            display: block;
+        }
+
+        .close-btn{
+            position: absolute;
+            left: -20px;
+            top: 0;
+            border: 1px solid #ccc; 
+        
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="./images/二维码.png" alt="">
+        <i class="close-btn">x</i>
+    </div>
+    <script>
+        //1.获取元素
+        var btn=document.querySelector('.close-btn');
+        var box=document.querySelector('.box');
+
+        //注册事件，处理程序     
+        btn.onclick =function(){
+            box.style.display='none';
+        }
+    </script>
+</body>
+</html>

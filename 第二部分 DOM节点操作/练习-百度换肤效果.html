@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            
+            width: 100px;
+        }
+        li{
+            float: left;
+            list-style: none;
+            margin: 10px;
+            cursor: pointer;
+            background-color: antiquewhite;
+        }
+        ul{
+            width: 240px;
+            margin-left: 500px;
+            margin-top: 300px;
+            background-color: antiquewhite;
+        }
+        body{
+            background: url("./背景图片/1.webp") no-repeat center top;
+        }
+    </style>
+</head>
+<body>
+    <ul class="baidu">
+        <li><img src="./背景图片/1.webp" alt=""></li>
+        <li><img src="./背景图片/2.webp" alt=""></li>
+        <li><img src="./背景图片/3.webp" alt=""></li>
+        <li><img src="./背景图片/4.webp" alt=""></li>
+    </ul>
+
+    <script>
+        //1.获取元素，返回的imgs的数组
+        var imgs=document.querySelector('.baidu').querySelectorAll('img');
+
+        //2.注册事件 imgs[i].onclick找到被点击了的img元素
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].onclick=function(){
+               // var imagestr="./背景图片/"+i+'.webp';
+                document.body.style.backgroundImage='url('+this.src+')';
+                console.log(this.src);                 
+            }
+        }
+
+    </script>
+</body>
+</html>

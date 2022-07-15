@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button>"按钮"</button>
+    <button>"按钮"</button>
+    <button>"按钮"</button>
+    <button>"按钮"</button>
+    <button>"按钮"</button>
+    <button>"按钮"</button>
+    <script>
+        //
+        var bts=document.getElementsByTagName("button");
+        //2.注册事件 ，注意bts是一系列的元素，bts[i].onclick
+        for(var i=0;i<bts.length;i++){
+            bts[i].onclick=function(){
+                for(var i=0;i<bts.length;i++){
+                    //先清空每一个btn的背景色
+                    bts[i].style.backgroundColor='';
+                }
+                //再设置当前的按钮的背景颜色
+                this.style.backgroundColor='blue';
+            }
+        }
+    </script>
+</body>
+</html>

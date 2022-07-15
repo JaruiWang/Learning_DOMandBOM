@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        var search=document.querySelector('input');
+        // 要实现的功能是按下s后，搜索框有光标聚焦
+        // 不要使用keydown，用keydown会多输入字母，可以使用keyup
+        document.addEventListener('keyup',function(e){
+         //   console.log(e.keyCode);
+         if (e.keyCode==83){
+             // 使用focus()方法使得光标聚焦
+            search.focus();
+         }
+        })
+    </script>
+</body>
+</html>

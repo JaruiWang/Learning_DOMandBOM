@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: bisque;
+            margin: 100px auto;
+            border: 1px solid rgba(0, 0,0,0);
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 100px auto ;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+    <script>
+        // addEventListener(type,listener[,useCapture])
+        // 第三个参数useCapture如果是true,表示在事件捕获阶段调用事件处理程序；
+        // 如果是false(不写默认是false),表示的是在事件冒泡阶段调用事件处理程序。
+        // var son=document.querySelector('.son');
+        // son.addEventListener('click',function(){
+        //     alert('son');
+        // },true);
+        // var father=document.querySelector('.father');
+        // father.addEventListener('click',function(){
+        //     alert('father');
+        // },true);
+
+    // addEventListener(type,listener[,useCapture])
+    // 第三个参数useCapture如果是false(不写默认是false),表示的是在事件冒泡阶段调用事件处理程序。
+        var son=document.querySelector('.son');
+        son.addEventListener('click',function(){
+            alert('son');
+        },false);
+        var father=document.querySelector('.father');
+        father.addEventListener('click',function(){
+            alert('father');
+        },false);
+    </script>
+</body>
+</html>

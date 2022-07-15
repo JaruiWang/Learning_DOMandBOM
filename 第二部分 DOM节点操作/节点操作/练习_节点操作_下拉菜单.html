@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .nav{
+            /* border: 1px solid; */
+            width: 600px;
+            margin-left: 500px;
+            font-size: 2em;
+        }
+
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li{
+            list-style: none;
+
+        }
+        .item,.title{
+            float: left;
+            /* border: 1px solid; */
+            /* padding: 10px; */
+        }
+
+        .item ul li,.title{
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+        .item ul{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="nav clearfix"  >
+        <li class="item">
+            <a href="#" class="title"> 微博1 </a>
+            <ul>
+                <li>
+                    <a href="">私信1</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li class="item" >
+            <a href="#" class="title"> 微博2 </a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#" class="title"> 微博3 </a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#" class="title"> 微博4 </a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#" class="title"> 微博5 </a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        // 获得对象
+        var items=document.querySelectorAll('.item');     
+        
+        //循环绑定事件
+        for(var i=0;i<items.length;i++){
+           // var current_uls=items[i].querySelector('ul');
+           // console.log(current_uls);
+           
+            items[i].onmouseover=function(){
+                //先清除所有的子菜单显示。
+                for(var i=0;i<items.length;i++){
+                    items[i].children[1].style.display='none';            
+                }
+                //再显示对应的子菜单
+                console.log(this.children[1]);
+                this.children[1].style.display='block';
+             // items[i].children[1].style.display='block';
+              
+            }
+
+        }
+
+    </script>
+</body>
+</html>

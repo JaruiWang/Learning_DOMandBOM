@@ -1,0 +1,46 @@
+.preview{
+    position: relative;
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 450px;
+    height: 450px;
+    background-color: antiquewhite;
+
+}
+img{
+    width: 450px;
+    height: 450px;
+}
+.big{
+    /* display: none; */
+    width: 600px;
+    height: 600px;
+    background-color: aqua;
+
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    z-index: 3px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+
+}
+.big img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 800px;   
+}
+
+.mask{
+    /* display: none; */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: bisque;
+    width: 300px;
+    height: 300px;
+    opacity: 0.5;
+    cursor: move;
+}

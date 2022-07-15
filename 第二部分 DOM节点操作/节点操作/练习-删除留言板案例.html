@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../reset.css"> -->
+    <style>
+        /* .publish{
+            padding-left: 10px;
+            width: 270px;
+            height: 300px;
+            border: solid 1px ;
+        } */
+        li{
+            margin-top: 10px;
+            /* display: block; */
+            width: 260px;
+           /*  height: 100px; */
+            background-color: pink;
+        }
+
+        a{
+            float: right;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+ 
+    </style>
+</head>
+<body>
+    <form action="" class="form1">
+        <textarea name="" id="" cols="30" rows="10">
+            aaa12312
+        </textarea>
+        <button type="button">发布</button>
+
+        <ul class="publish">
+
+        </ul>
+    </form>
+
+    <script>
+        //(1)获得对象
+        var textarea=document.querySelector('textarea');
+        var btn=document.querySelector('button');
+        var publish=document.querySelector('.publish');
+        
+        // (2)绑定事件
+        btn.onclick=function(){
+            var textarea_content=textarea.value;
+          //  console.log(textarea_content);
+          var li=document.createElement('li');
+
+          //添加删除按钮
+          var delete_a=document.createElement('a');
+          delete_a.innerHTML='删除';
+          delete_a.href='javascript:;';
+
+          //添加textarea里面的内容
+          li.innerHTML=textarea_content;
+          li.appendChild(delete_a);
+        //  publish.appendChild(li);
+        publish.insertBefore(li,publish.children[0]);
+
+
+        //(3)删除元素 删除的当前链接的li 
+        // 获取的删除元素a
+        // 注意删除这段代码要放在btn.onclick=function(){}里面
+        var as=document.querySelectorAll('a');
+        // 循环绑定事件
+        for(var i=0;i<as.length;i++){
+            as[i].onclick=function(){
+             //   publish.removeChild(this.parentNode);
+                publish.removeChild(this.parentNode);
+                console.log('a111111');
+
+            }
+        }
+    }
+        
+    </script>
+
+</body>
+</html>

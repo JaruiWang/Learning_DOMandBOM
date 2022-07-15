@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 传统的绑定方式
+        // document.onkeydown=function(){
+        //     console.log("按下了");
+        // }
+
+        //现在推荐的绑定方式
+        document.addEventListener('keypress',function(){
+            console.log("按下了keypress");
+        })
+        document.addEventListener('keydown',function(){
+            console.log("按下了keydown");
+        })
+        document.addEventListener('keyup',function(){
+            console.log("按下了keyup");
+        })
+
+    </script>
+</body>
+</html>

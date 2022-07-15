@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 从数学上来讲，盒子是到不了目标值的，但是可以无限地接近，所以需要设置一个偏差的阈值，
+        // 比如设置偏差的阈值是1，目标值减去当前位置的差值小于1就算到达了，停止定时器。
+        var location0=0;  
+        for(var i=0;i<100;i++){
+            var step=(100-location0)/10;
+            location0=location0+step
+            console.log(i,step,location0);
+            if(100-location0<1){
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

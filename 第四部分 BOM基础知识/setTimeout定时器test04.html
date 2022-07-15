@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.函数在外面定义，setTimeout()里面写函数名
+        function test(){
+            console.log('你好');
+        }
+        //window一般不写
+       // window.setTimeout(test,3000);
+      // setTimeout(test,2000);
+
+       //2.在setTimeout()里面直接定义函数
+       setTimeout(function(){
+           console.log("在里面定义函数")
+       },5000)
+
+       //用标识符区别不同的定时器
+       var timer1=setTimeout(test,2000);
+       var timer2=setTimeout(test,5000);
+    </script>
+</body>
+</html>

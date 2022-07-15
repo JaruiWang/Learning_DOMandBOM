@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 85px;
+            height: 20px;
+            /* line-height: 20px;
+            font-size: 10px; */
+        }
+    </style>
+</head>
+<body>
+    手机号码：<input type="number"> <button>发送</button>
+
+    <script>
+        var btn=document.querySelector('button');
+        var time=3;
+        btn.addEventListener('click',function(){
+            //注意this在这里面指向btn,但是在fn(){}不是。
+            this.disabled=true;
+            console.log(this);
+            var timer01=setInterval(fn,1000);
+            function fn(){
+                btn.innerHTML="还剩下"+time+"秒";
+                time--;
+
+                if(time==-1){
+                clearInterval(timer01);
+                // 这里的btn不能用this代替，setInterval定时器调用的函数fn中的this指向window。
+                btn.disabled=false;
+                btn.innerHTML="发送";
+            //    console.log(this);
+                time=3;
+            }
+            }
+        })
+    </script>
+</body>
+</html>

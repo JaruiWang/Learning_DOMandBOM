@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin:100px auto;
+            width: 500px;
+            border-collapse:collapse;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        th,td{
+            border: 1px solid #ccc;
+            height: 50px;        
+        }
+        thead tr{
+            background-color: #008c8c;
+            color: #fff;
+            
+        }
+        tbody tr:nth-child(even){
+            background-color: #eee;
+        }
+        tbody tr:hover{
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <table cellspacing="10">
+        <thead>
+
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+   
+        </tbody>
+      </table>
+
+      <script>
+          // 1.先准备好学生的数据
+          var datas=[
+              {name:'戴莫',
+              subject:'数学',
+              score:100       
+            },{name:'宏利',
+              subject:'数学',
+              score:95       
+            },{name:'王五',
+              subject:'数学',
+              score:95       
+            },{name:'明玉',
+              subject:'数学',
+              score:88     
+            },{name:'大猪蹄子',
+              subject:'数学',
+              score:0     
+            }
+          ];
+          //创建函数，输入行列（i.j）获取datas里面的值
+          function get_tablename(i,j){
+              if(j==0){
+                  return datas[i].name;
+              }else if(j==1){
+                  return datas[i].subject;
+              }else if(j==2){
+                  return datas[i].score;
+              }else {
+                  return false;
+              }
+            }
+
+          console.log(get_tablename(2));
+
+          //2.往tbody里面创建行；几个人创建几行
+         // console.log(datas.length);
+         var tbody=document.querySelector('tbody');
+         for(var i=0;i<datas.length;i++){
+             //创建行
+             var tr=document.createElement('tr');
+             //创建单元格，并且赋值内容数据
+            //  for(var j=0;j<3;j++){
+            //     var td=document.createElement('td');
+            //     td.innerHTML=get_tablename(i,j);
+            //     tr.appendChild(td)
+            //  }
+            for(var k in datas[i]){
+                //创建单元格，并且赋值内容数据
+                //这种写法比上面的写法更好，不需要使用自定义函数get_tablename(i,j),也不需要人为确认j的范围;
+                var td=document.createElement('td');
+                td.innerHTML=datas[i][k];
+                tr.appendChild(td)
+            }
+            // for(var k in obj){
+            //     // k得到的是属性名
+            //     obj[k]得到的是属性值
+            // }
+
+
+             // 创建删除链接按钮
+            //  as_btn=document.createElement('a');
+            //  as_btn.innerHTML='删除';
+            //  as_btn.href='javascript:;';
+            var as_btn=document.createElement('td');
+            as_btn.innerHTML="<a href='javascript:;'> 删除 </a>"
+             tr.appendChild(as_btn);
+
+             tbody.appendChild(tr);
+         }
+
+         //获得删除按钮
+         var as_btns_get=document.querySelectorAll('a');
+         console.log(as_btns_get)
+         //循环绑定事件
+         for(var z=0;z<as_btns_get.length;z++){
+            as_btns_get[z].onclick=function(){
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+         }
+      </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用 new Object 创建对象
+        var obj=new Object(); //创建一个新的对象
+        obj.uname='张三';
+        obj.age=18;
+        obj.sex='男';
+        obj.sayHi=function(){
+            console.log('利用 new Object 创建对象,hi~');
+        }
+        // (1) 我们利用等号 = 赋值的方法 添加对象和函数
+        // (2) 每个属性和方法之间 用分号 结束
+
+        console.log(obj.uname);
+        obj.sayHi();
+    </script>
+    
+</body>
+</html>

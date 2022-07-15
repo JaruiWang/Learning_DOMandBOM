@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/早上号.gif" alt="">
+    <div>上午好</div>
+
+    <script>
+        //1.获取元素
+        var img=document.querySelector("img");
+        var div=document.querySelector("div");
+
+        // 2.获取当前的小时数
+        var myDate = new Date();
+        var myhours=myDate.getHours();  //获取当前小时数(0-23)
+      
+        if(myhours<13){
+            img.src="./images/早上号.gif";
+            div.innerHTML="早上好";
+        }else if(myhours<18){
+            img.src="./images/下午好.gif";
+            div.innerHTML="下午好";
+        }else{
+            img.src="./images/晚上好.gif";
+            div.innerHTML="晚上好";
+        }
+
+        // if(myhours>12 && myhours<19){
+        //     img.src="./images/下午好.gif";
+        //     div.innerHTML="下午好";
+        // }
+        // if(myhours>18 && myhours<24){
+        //     img.src="./images/晚上好.gif";
+        //     div.innerHTML="晚上好";
+        // }
+
+    </script>
+</body>
+</html>

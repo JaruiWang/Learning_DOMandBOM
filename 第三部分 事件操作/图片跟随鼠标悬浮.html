@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 150px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./打网球.png" alt="">
+    <script>
+        var img=document.querySelector('img');
+        document.addEventListener('mousemove',function (e){
+            //mousemove事件，只要鼠标移动1px，就会触发这个事件。
+            console.log(e.clientX);
+
+            //要记得添加“px”
+            img.style.left=(e.clientX-150)+"px";
+            img.style.top=(e.clientY-40)+"px";
+        })
+    </script>
+</body>
+</html>

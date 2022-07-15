@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+        }
+        div{
+            display: inline-block;
+        }
+        .password{
+            width: 150px;
+        }
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+        .reminder{
+            color: #999;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="password">
+    <div>
+        <img  class='iconimg' src="" alt="">
+        <span class="reminder">请输入6-16位的字母或数字或下划线</span>
+    </div>
+    <script>
+        //1.获取元素
+        var password=document.querySelector('.password');
+        var img=document.querySelector('.iconimg');
+        var reminder=document.querySelector('.reminder');
+        //2.注册事件
+        password.onblur=function(){
+            var passwordValueLength=password.value.length; 
+            console.log("输入的字符串长度是："+passwordValueLength);
+      //      console.log("长度变量的类型："+typeof(passwordValueLength));
+         if(passwordValueLength==0){
+            img.src='';
+            reminder.className='reminder';
+            reminder.innerHTML="请输入6-16位的字母或数字或下划线";
+         }else if(password.value.length<6 || passwordValueLength>16){
+            img.src='./images/错误.png';
+            reminder.className='reminder  wrong';
+            reminder.innerHTML="输入错误，请重输";
+          //  console.log("wrong");
+         }else{
+            img.src='./images/正确.png';
+            reminder.className='reminder right';
+            reminder.innerHTML="输入正确";
+         }
+        }
+    </script>
+</body>
+</html>

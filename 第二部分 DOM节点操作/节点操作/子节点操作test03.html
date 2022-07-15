@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>c</li>
+        <li>c</li>
+        <li>c</li>
+    </ul>
+
+    <ol>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </ol>
+
+    <script>
+        //传统的DOM提供的方法（API）获取
+        var ul=document.querySelector('ul');
+        var lis=ul.querySelectorAll('li');
+      //  console.log(lis);
+      // 1.子节点  childNodes 所有的子节点 包含 元素节点 文本节点等。
+      console.log(ul.childNodes);
+      console.log(ul.childNodes[0].nodeType);
+      console.log(ul.childNodes[1].nodeType);
+      //childNodes想要获取单纯的子元素节点需要根据nodeType值来专门处理，比较麻烦，一般不推荐使用
+
+      // 2.children 获取所有的子元素节点,也是实际开发过程中常用的
+      console.log(ul.children);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        input{
+            color: #999;
+            border: 1px solid;
+        }
+
+        .bordercolor{
+            border-color: aqua;
+        }
+    
+    </style>
+</head>
+<body>
+    <input type="text" value="邮箱/ID/手机号" >
+    <!-- <input type="text" class="bordercolor"> -->
+    <script>
+        //1.获取对象
+        var input=document.querySelector('input');
+        //2.注册事件  onfoucu触发事件
+        input.onfocus=function(){
+            this.value='';
+            this.style.color="#999";
+          //  this.className='bordercolor';
+             this.style.borderColor='red';
+        }
+
+        input.onblur=function(){
+            if(this.value==''){
+                this.value='邮箱/ID/手机号';
+                this.style.color="#999";
+                this.style.borderColor='#999';
+            }else{
+                this.style.color="#333";
+             //   this.style.borderColor='blue';
+                this.style.borderColor='#999';
+            }
+        }
+    </script>
+</body>
+</html>

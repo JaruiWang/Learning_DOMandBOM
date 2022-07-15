@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>你好，</p>
+    <span class="uname"></span>
+    <span>欢迎来到稻科智能</span>
+    <script>
+        var uname=document.querySelector('.uname');
+
+      // location.search获取参数，再去掉前面的？
+        var param1=location.search.substr(1);
+
+        // 通过“=”分割开来，返回一个数组
+       var  param2_Array=param1.split('=');
+     //取数组的第二个数据就是名字
+       var param3=param2_Array[1];
+    //   console.log(param3);
+    uname.innerHTML=param3;
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search{
+            margin-top: 100px;
+            margin-left: 100px;
+            position: relative;
+        }
+        .con{
+            border: 1px solid;
+            width: 170px;
+            font-size: 25px;
+            position: absolute;
+            top: -40px;
+            /* display: none; */
+
+        }
+        .con::before{
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 18px;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入您的快递单号" class="id">
+    </div>
+
+    <script>
+    // 快递单号输入内容时,上面的大号字体盒子(con)显示(这里面的字号更大)
+    // 表单检测用户输入：给表单添加键盘事件
+    var id=document.querySelector('.id');
+    var con=document.querySelector('.con');
+    id.addEventListener('keyup',function(e){
+        if(id.value==''){
+            con.style.display='none';
+        }else{
+            con.style.display='block';
+            con.innerHTML=id.value;
+        }
+        
+    })
+
+    id.onblur=function(){
+        con.style.display='none';
+    }
+
+    id.onfocus=function(){
+        console.log("文本框聚焦了");
+        if(this.value!==''){
+            con.style.display='block';
+        }
+        
+    }
+    </script>
+
+</body>
+</html>

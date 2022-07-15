@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        span{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            display: block;
+            position: absolute;
+            top: 300px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <span>夏雨荷</span>
+    <button class="btn500">按钮500</button>
+    <button class="btn800">按钮800</button>
+    <script>
+        var div=document.querySelector('div');
+        var span=document.querySelector('span');
+        var btn500=document.querySelector('.btn500');
+        var btn800=document.querySelector('.btn800');
+        // 简单动画函数封装 obj目标对象 target 目标位置
+        function animate(obj,target){
+            clearInterval(obj.timer1);
+            obj.timer1=window.setInterval(function(){
+              //  目标值target，初始值是obj.offsetLeft
+              //  每一步的步长是(target-obj.offsetLeft)/10,要取整step=Math.ceil((target-obj.offsetLeft)/10)
+            var step_a=(target-obj.offsetLeft)/10;
+            if(step_a>=0){
+                var step=Math.ceil(step_a);
+            }else{
+                var step=Math.floor(step_a);
+            }
+            
+            console.log('程序还在运动',obj.offsetLeft,target,step);
+            obj.style.left=obj.offsetLeft+step+'px';
+            if(obj.offsetLeft==target) {
+            clearInterval(obj.timer1);
+            }           
+        },10);
+        }
+
+        btn500.addEventListener('click',function(){
+            animate(span,500);
+        })
+
+        btn800.addEventListener('click',function(){
+            animate(span,800);
+        })
+
+        
+
+    </script>
+</body>
+</html>

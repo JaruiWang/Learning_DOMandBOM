@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        //2. innerHTML 创建元素  使用字符串拼接的形式  运行效率非常低
+        // var inner=document.querySelector('.inner');
+        // var inner_time1= new Date();
+        // console.log(inner_time1);
+        // for(var i=0;i<3000;i++){
+        //     inner.innerHTML+='<div style="width:100px; height:100px; border:1px solid; " href="javascript:;"></a>';
+        // }
+        // var inner_time2= new Date();
+        // console.log(inner_time1);
+        // console.log(inner_time2-inner_time1);
+
+
+        //2-2. innerHTML 创建元素  使用数组拼接的形式  运行效率最高的
+        var inner=document.querySelector('.inner');
+        var inner_time3= new Date();
+        console.log(inner_time3);
+        var arr=[];
+        for(var i=0;i<3000;i++){
+            arr.push('<div style="width:100px; height:10px; border:1px solid; "> </div>');
+        }
+        inner.innerHTML=arr.join(" ");
+
+        var inner_time4= new Date();
+        console.log(inner_time4);
+        console.log(inner_time4-inner_time3);
+
+
+      //  document.createElement() 创建元素  
+        // var create=document.querySelector('.create');
+        // var create_time1= new Date();
+        // console.log(create_time1);
+        // for(var i=0;i<3000;i++){       
+        //     var div=document.createElement('div');
+        //     div.style.width='100px';
+        //     div.style.height='100px';
+        //     div.style.border='1px';     
+        //     create.appendChild(div);
+        // }
+        // var create_time2= new Date();
+        // console.log(create_time2);
+        // console.log(create_time2-create_time1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .maincontent{
+            margin: auto;
+            width: 600px;
+            height: 1600px;
+            background-color: antiquewhite;
+        }
+
+        .goBack{
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            background: url(./返回顶部.png) no-repeat;
+            background-size: 38px 38px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回顶部模块 -->
+    <div class="goBack"></div>
+    <div class="maincontent">
+        Lorem ipsum dolor sit amet, consecteturusdam cupiditate, possimus quis quos a rerum debitis!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis vero deleniti dolores velit? Debitis animi nisi atque quis, rem accusamus! At beatae tempora incidunt adipisci deserunt atque, unde corporis sunt quam voluptatem ipsum culpa autem dignissimos aperiam! Ratione, impedit, labore mollitia fugit nesciunt, molestias nisi veniam blanditiis aliquid quidem magnam alias. Perspiciatis quia dolore possimus laboriosam aperiam fugiat laudantium asperiores sunt veritatis quibusdam magnam eveniet iste, dolorum repellat tenetur corrupti, doloremque necessitatibus? Iure soluta nam dicta vitae assumenda, alias ea dolores itaque saepe repellat provident repellendus cum. Totam ab quas cupiditate, vero asperiores similique eaque quia qui molestias tempora consectetur suscipit temporibus voluptas ad, inventore sequi deserunt quaerat dolores repudiandae consequuntur! Hic ratione inventore quisquam officiis a, nostrum aut perferendis odit ea nobis esse distinctio maxime eos beatae totam unde molestias error officia fugit quos vel dolores aspernatur! Quae dicta accusantium commodi inventore aperiam culpa ex mollitia dolorum vitae necessitatibus saepe eum magni impedit expedita cumque praesentium repellat perspiciatis numquam nesciunt itaque, cupiditate velit ratione non. Repellat quibusdam error minima id accusamus doloribus velit, laudantium doloremque incidunt nostrum corrupti esse itaque laborum debitis eaque eius a nisi sunt maxime omnis ea nesciunt rerum. Explicabo molestiae consequatur voluptate nobis officia. Totam deserunt odio sed aliquam quo magnam fugiat ipsum, voluptates ducimus, reiciendis dicta? Sapiente veniam at vel cumque. Cum ex similique iure soluta ullam, quasi incidunt, fuga facere, laudantium quae culpa voluptatem officiis optio praesentium et accusamus cupiditate doloribus quod maxime exercitationem? Adipisci laudantium magni iste labore totam debitis perferendis necessitatibus tenetur accusantium corrupti voluptatibus exercitationem possimus similique, et voluptas eum nihil consectetur deleniti ipsa assumenda ad! Fugiat officiis distinctio, molestiae eos fuga ipsam quod numquam quae aperiam sint expedita. Delectus consectetur alias aspernatur saepe repudiandae, sit vero, magnam fugiat et iusto quibusdam quod optio maiores labore accusamus provident repellendus beatae.
+        Lorem ipsum, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequuntur fugiat tempore excepturi nemo minus ut aut dicta, reiciendis ipsa nihil. Magnam assumenda repellat odio nihil. Assumenda, iste. Neque dolore maxime alias nobis dolorum blanditiis ipsa optio sed omnis debitis in laboriosam explicabo, dicta qui? Ut a soluta magnam consequuntur libero eligendi debitis est, assumenda tempore voluptates ipsum rerum, accusantium aspernatur quo enim ea vitae earum doloremque, cum voluptatum ex? Laboriosam, dolores, temporibus ratione voluptatum itaque dolorum aperiam odio voluptates qui odit illum sed nulla earum doloremque! Aspernatur cum enim consectetur qui sunt quo aperiam nemo optio temporibus ex! Sequi.
+    <script>
+        // 当页面滚动到某个地方，就显示，否则就隐藏
+        // 点击可以返回顶部
+        // 使用window.scroll(x,y)让页面滚动到某个地方
+        // window.pageYOffset表示整个网页的滚动距离
+        var goBack=document.querySelector('.goBack');
+        window.addEventListener('scroll',function(){
+            // console.log(12);
+            if(window.pageYOffset>=500){
+                goBack.style.display='block';
+            }else{
+                goBack.style.display='none';
+            }
+        })
+
+        goBack.addEventListener('click',function(){
+            window.scroll(0,0);
+        })
+
+    </script>
+</body>
+</html>

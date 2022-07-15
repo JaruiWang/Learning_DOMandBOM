@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        请点击我噢
+    </div>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+    <script>
+        // div=document.querySelector('div');
+        
+        // div.addEventListener('click',function(e){
+        //     console.log(e.target);
+        //     console.log(this);
+        // })
+
+        ul=document.querySelector('ul');
+        ul.addEventListener('click',function(e){
+            console.log(e.target);
+            //e.target返回的是触发事件的对象元素
+            console.log(this);
+            // this返回的是事件绑定的对象元素
+
+         //   console.log(e.currentTarget);
+         //  了解即可。e.currentTarget和this类似。
+        })
+    </script>
+</body>
+</html>

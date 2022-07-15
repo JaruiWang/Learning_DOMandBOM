@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>
+        点击
+    </button>
+    <!-- this 指向问题  -->
+    <script>
+        //1.全局作用域下，或者普通函数fn()中，this都是指向window对象
+    //    console.log(this);
+    // 普通函数fn()，也是window的对象的一个方法。
+        function fn(){
+            console.log(this);
+        }
+        window.fn();
+        // 定时器中调用的函数，this也是指向window.
+        // 因为定时器setTimeout是window对象的一个方法。
+        window.setTimeout(function(){
+            console.log(this);
+        },1000)
+
+        // 2. 方法调用中谁调用this指向调用了方法的对象
+        var o={
+            sayHi:function(){
+                console.log(this);
+            }
+        }
+ //   o.sayHi();
+        // 按钮调用函数中的this，指向按钮
+        var btn=document.querySelector('button');
+        btn.onclick=function(){
+            console.log("按钮点击调用");
+            console.log(this);
+        }
+
+        // 3.构造函数中的this指向构造函数的实例
+        function Fun(){
+            console.log(this);  //构造函数中的this指向fun实例对象
+        }
+        var fun=new Fun();
+
+    </script>
+</body>
+</html>

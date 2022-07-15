@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>跳转</button>
+    <script>
+        var btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            //assign记录历史，所以可以实现后退功能
+          //  location.assign('http://www.jd.com');
+
+          //replace不记录历史，所以不可以实现后退功能
+      //    location.replace('http://www.itcast.cn');
+        location.reload(); // 重新加载页面，刷新相当于F5
+        location.reload(true); // 强制刷新，相当于Ctrl+F5
+    })
+    </script>
+</body>
+</html>

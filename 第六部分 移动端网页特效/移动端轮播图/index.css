@@ -1,0 +1,44 @@
+img{
+    width: 500px; 
+    height: 320px;        
+}
+
+.focus{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.focus ul li{
+    float: left;
+}
+.focus ul{
+    width: 800%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+}
+
+.focus ol{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.focus ol li{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    list-style: none;
+    /* float: left; */
+    /* margin: 2px; */
+    border-radius: 2px;
+}
+
+.focus ol li.current{
+    width: 15px;
+}

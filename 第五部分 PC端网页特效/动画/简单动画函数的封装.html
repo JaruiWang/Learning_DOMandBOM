@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 10px;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            display: block;
+            position: absolute;
+            top: 300px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        var div=document.querySelector('div');
+        var span=document.querySelector('span');
+        // 简单动画函数封装 obj目标对象 target 目标位置
+        function animate(obj,target){
+            var timer1=window.setInterval(function(){
+                obj.style.left=obj.offsetLeft+1+'px';
+
+            if(obj.offsetLeft>=target){
+            clearInterval(timer1);
+        }
+        },10);
+        }
+
+        // animate(div,100);
+        animate(span,200);
+
+
+        console.log(typeof div.style.left);
+        // div.style.left='10px';
+        console.log(div.style.left);
+
+
+       
+        
+
+
+        
+
+
+    </script>
+</body>
+</html>

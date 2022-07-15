@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .publish{
+            padding-left: 10px;
+            width: 270px;
+            height: 300px;
+            border: solid 1px ;
+        } */
+        li{
+            margin-top: 10px;
+            /* display: block; */
+            width: 260px;
+           /*  height: 100px; */
+            background-color: pink;
+        }
+ 
+    </style>
+</head>
+<body>
+    <form action="" class="form1">
+        <textarea name="" id="" cols="30" rows="10">
+            aaa12312
+        </textarea>
+        <button type="button">发布</button>
+
+        <ul class="publish">
+
+        </ul>
+    </form>
+
+    <script>
+        //获得对象
+        var textarea=document.querySelector('textarea');
+        var btn=document.querySelector('button');
+        var publish=document.querySelector('.publish');
+        // 绑定事件
+        btn.onclick=function(){
+            var textarea_content=textarea.value;
+          //  console.log(textarea_content);
+          var li=document.createElement('li');
+          li.innerHTML=textarea_content;
+        //  publish.appendChild(li);
+        publish.insertBefore(li,publish.children[0]);
+
+        }
+    </script>
+
+</body>
+</html>

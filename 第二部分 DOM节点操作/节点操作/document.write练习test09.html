@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <script>
+        //document.write()就是把标签放在页面的最后（body元素的最后一个子元素）
+       // document.write('<p>aallaammaa</p>');
+
+        // var btn=document.querySelector('button');
+        // btn.onclick=function(){
+        //     document.write('<p>aallaammaa</p>');
+        //     //如果在页面加载完毕后，再调用document.write(),会刷新掉之前的页面
+
+        // }
+
+        window.onload=function(){
+            document.write('<p>aallaammaa</p>');
+        }
+        
+    </script>
+</body>
+</html>

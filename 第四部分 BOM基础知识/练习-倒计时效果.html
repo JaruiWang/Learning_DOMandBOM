@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+            line-height: 50px;
+            text-align: center;
+            font-size: 27px;
+        }
+
+        div{
+            width: 200px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hour">01</span>
+        <span class="miunte">15</span>
+        <span class="second">28</span>
+    </div>
+    <script>
+        // 1.获取元素
+        var hour=document.querySelector('.hour');
+        var miunte=document.querySelector('.miunte');
+        var second=document.querySelector('.second');
+
+        var timer01=setInterval(timerfn,1000);
+        var number_hour=00;
+        var number_miunte=00;
+        var number_second=28;
+        second.innerHTML=number_second;
+        miunte.innerHTML=number_miunte;
+        hour.innerHTML=number_hour;
+        
+        function timerfn(){
+            number_second=number_second-1;
+            second.innerHTML=number_second;
+            if(number_second==0 && number_miunte>0){
+                number_second=60;
+                number_miunte=number_miunte-1;
+                miunte.innerHTML=number_miunte;
+            }
+            if(number_miunte==0 && number_hour>0 ){
+                number_miunte=60;
+                number_hour=number_hour-1;
+                hour.innerHTML=number_hour;
+            }
+            if(number_second==0 && number_miunte==0 &&  number_hour==0){
+                clearInterval(timer01);
+                alert("倒计时结束了！");
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>

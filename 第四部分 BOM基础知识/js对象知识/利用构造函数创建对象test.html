@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用构造函数创建对象
+        // 构造函数的语法格式
+        // function 构造函数名(){
+        //     this.属性=值;
+        //     this.方法=function(){}
+        // }
+        // new 构造函数名();
+
+        function Star(uname,age,sex){
+            this.name=uname;
+            this.age=age;
+            this.sex=sex;
+            this.sing=function(song){
+                console.log(song);
+            }
+        }
+        var ldh=new Star('刘德华',19,'男');
+        // new 构造函数Star(),调用函数返回的是一个对象。
+        console.log(typeof ldh);
+        console.log(ldh.sex);
+        ldh.sing("冰雨");
+        // 构造函数的首字母要大写，是一种规范，不是语法
+
+       var zxy=new Star('张学友',20,'女');
+       console.log(zxy.name);
+    </script>
+</body>
+</html>

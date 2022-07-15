@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.立即执行函数，不需要调用，立马能够自己执行的函数
+        function fn(){
+            console.log(1);
+        }
+        // 一般的函数需要调用才能执行
+        fn();
+
+        //2.立即执行函数的写法 两者写法
+        // (function(){})() 或者 (function(){}());
+
+        // 第一种写法 (function(){})()
+   (function sum1(a,b) {
+       console.log(a,b);
+   })(5,3);  //第二个小括号可以看作是调用函数
+
+   // 第二种写法  (function(){}());
+   (function  sum(a,b){
+       console.log(a,b);
+    }(7,9));
+
+    // 3.立即执行函数最大的作用是 独立创建了一个作用域
+    // 里面的所以变量都是局部变量，不会有命名冲突的情况，函数执行完变量就释放了
+   </script>
+</body>
+</html>

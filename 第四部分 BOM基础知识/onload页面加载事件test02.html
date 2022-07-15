@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load',function(){
+            var btn=document.querySelector('button');
+            btn.addEventListener('click',function(){
+                alert('window.load事件');
+            })
+            
+        })
+
+        //load触发事件，需要等页面的全部内容加载完毕，包括页面的dom元素，图片，flash和CSS等。
+        // DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片和flash等。
+        // DOMContentLoaded事件触发会比load更快。
+        window.addEventListener('load',function(){
+            alert('window.load事件123');
+        })
+
+        // DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片和flash等。
+        // 如果页面的图片非常多，用户用onload触发可能需要较长的时间，影响交互效果，这时用DOMContentLoaded事件比较合适。
+        // IE9浏览器以上才支持。
+        document.addEventListener('DOMContentLoaded',function(){
+            alert("DOMContentLoaded事件")
+        })
+    </script>
+</head>
+<body>
+
+    <button>按钮</button>
+    <!-- <script>
+        var btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            alert('a12');
+        })
+            
+    </script> -->
+</body>
+</html>
